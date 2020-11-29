@@ -1,0 +1,589 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Lorgus</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" href="~/images/logo_min.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/css/style.css">
+
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/jquery-ui.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="~/css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="~/css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="~/css/flaticon.css">
+
+    <link rel="stylesheet" href="~/css/aos.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+    <style type="text/css">
+ 
+        .obfuscator {
+            opacity: 0;
+            transition-property: opacity;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            visibility: hidden;
+            transition-property: background-color;
+            transition-duration: 0.2s;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.5);
+            visibility: visible;
+        }
+
+        .btn-whatsapp {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            color: #25d366;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            z-index: 100;
+            background-color: rgba(0,0,0,0.1);
+        }
+
+        .btn-whatsapp-icon {
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
+
+    <div class="site-wrap">
+
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body">
+  
+            </div>
+        </div>
+
+        <div class="border-bottom top-bar py-2 bg-dark" id="home-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="mb-0">
+                            <span class="mr-3"><strong class="text-white">Telefone:</strong> <a href="tel:+5501123828648">(11) 2382-8648</a></span>
+                            <span><strong class="text-white">E-mail:</strong> <a href="mailto:contato@lorgus.com.br" target="_blank">contato@lorgus.com.br</a></span>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="social-media">
+                            <li><a href="https://www.facebook.com/DedetizadoraLorgus/" target="_blank" class="p-2"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="https://wa.me/5511972197171?text=Ol%C3%A1%2C+vi+o+site+de+voc%C3%AAs+e+tenho+interesse+em+fazer+um+or%C3%A7amento%21" target="_blank" class="p-2"><i class="fab fa-whatsapp"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sticky-wrapper" class="sticky-wrapper" style="height: 74.125px;">
+            <header class="site-navbar py-4 bg-white js-sticky-header site-navbar-target" role="banner" style="">
+
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <div class="col-11 col-xl-2">
+                            <div class="mb-0 site-logo"><a href="/" class="h2 mb-0"><img src="~/images/logo.png" width="150" alt="Logo" /></a></div>
+                        </div>
+                        <div class="col-12 col-md-10 d-none d-xl-block">
+                            <nav class="site-navigation position-relative text-right" role="navigation">
+
+                                <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                                    <li><a href="#home-section" class="nav-link active">Home</a></li>
+                                    <li>
+                                        <a href="#services-section" class="nav-link">Serviços</a>
+                                    </li>
+                                    <li>
+                                        <a href="#about-section" class="nav-link">Quem somos</a>
+                                    </li>
+
+                                    <li><a href="#contact-section" class="nav-link">Contato</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+
+
+                        <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><i class="fas fa-bars"></i></a></div>
+
+                    </div>
+                </div>
+
+            </header>
+        </div>
+
+
+
+        <div class="site-blocks-cover overlay aos-init aos-animate" style="background-image: url(&quot;@Url.Content("~/images/capa.jpg")&quot;); background-position: 50% -95px;" data-aos="fade" data-stellar-background-ratio="0.5">
+            <div class="obfuscator"></div>
+            <div class="container">
+                <div class="row align-items-center justify-content-center text-center">
+
+                    <div class="col-md-12 aos-init aos-animate" style="z-index:10" data-aos="fade-up" data-aos-delay="400">
+
+                        <div class="row justify-content-center mb-4">
+                            <div class="col-md-8 text-center">
+                                <h1>Conte conosco para <span class="typed-words">desinsetização!</span></h1>
+                                <a href="#contact-section" class="btn btn-primary btn-md smoothscroll">Solicitar orçamento</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*<section class="site-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 box-with-humber">
+                                <div class="number-behind">01.</div>
+                                <h2 class="text-primary">Innovate</h2>
+                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et praesentium eos nulla qui commodi consectetur beatae fugiat. Veniam iste rerum perferendis.</p>
+                                <ul class="list-unstyled ul-check primary">
+                                    <li>Customer Experience</li>
+                                    <li>Product Management</li>
+                                    <li>Proof of Concept</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 box-with-humber">
+                                <div class="number-behind">02.</div>
+                                <h2 class="text-primary">Create</h2>
+                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et praesentium eos nulla qui commodi consectetur beatae fugiat. Veniam iste rerum perferendis.</p>
+                                <ul class="list-unstyled ul-check primary">
+                                    <li>Web Design</li>
+                                    <li>Branding</li>
+                                    <li>Web &amp; App Development</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="p-3 box-with-humber">
+                                <div class="number-behind">03.</div>
+                                <h2 class="text-primary">Scale</h2>
+                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et praesentium eos nulla qui commodi consectetur beatae fugiat. Veniam iste rerum perferendis.</p>
+                                <ul class="list-unstyled ul-check primary">
+                                    <li>Social Media</li>
+                                    <li>Paid Campaigns</li>
+                                    <li>Marketing &amp; SEO</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>*@
+
+        <section class="site-section border-bottom" id="services-section">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-md-8 text-center aos-init" data-aos="fade-up">
+                        <h2 class="text-black h1 site-section-heading text-center">Nossos serviços</h2>
+                    </div>
+                </div>
+                <div class="row align-items-stretch">
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-4 aos-init" data-aos="fade-up">
+                        <div class="unit-4 d-flex">
+                            @*<div class="unit-4-icon mr-4"><i class="fas fa-bug text-primary"></i></div>*@
+                            <div>
+                                <h3>Desinsetização</h3>
+                                <p>Fique livre de baratas e formigas de uma vez por todas. Trabalhamos com dedetização de forma técnica e transparente, garantindo assim, qualidade e segurança no controle dos mais variados tipos de insetos. Cuidamos do bem estar dos nossos clientes a ainda fornecemos um Certificado de Garantia de Assistência Técnica.</p>
+                                @*<p><a href="#">Learn More</a></p>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-4 aos-init" data-aos="fade-up" data-aos-delay="100">
+                        <div class="unit-4 d-flex">
+                            <div>
+                                <h3>Desratização</h3>
+                                <p>Dispomos das mais avançadas estratégias, adequando sempre a melhor tecnologia no controle dos roedores, utilizando um conjunto de medidas que visa a reduzir as chances de invasão e instalação dos roedores, como os camundongo, as ratazanas e os ratos de Telhado.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-4 aos-init" data-aos="fade-up" data-aos-delay="200">
+                        <div class="unit-4 d-flex">
+                            <div>
+                                <h3>Descupinização</h3>
+                                <p>Não deixe que os cupins acabem com o seu patrimônio. Combatemos os mais diversos tipos de cupins, com especialidade nos cupins de madeira seca e subterrâneo.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-4 aos-init" data-aos="fade-up" data-aos-delay="300">
+                        <div class="unit-4 d-flex">
+                            <div>
+                                <h3>Higienização de caixa d’água</h3>
+                                <p>Fique livre de doenças tomando água com qualidade. Lavamos e desinfetamos a sua caixa d’água ou reservatório. A limpeza ainda ajudar a evitar entupimentos dos canos causados por acumulo de sujeira no fundo das caixas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-4 aos-init" data-aos="fade-up" data-aos-delay="400">
+                        <div class="unit-4 d-flex">
+                            <div>
+                                <h3>Programa de controle integrado de pragas</h3>
+                                <p>Utilizamos de ações preventivas e corretivas de monitoramento, visando a impedir que vetores e pragas urbanas se instalem no ambiente com Inspeções periódicas e cronograma de serviços. Fornecemos uma pasta gerencial com documentos e relatórios, além do mapeamento dos portas iscas instalados. Eliminando os fatores que influenciam nessa proliferação que são os 4 AS: acesso, abrigo, água e alimento.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-4 aos-init" data-aos="fade-up" data-aos-delay="500">
+                        <div class="unit-4 d-flex">
+                            <div>
+                                <h3>Sanitização</h3>
+                                <p>Previna-se do covid-19, esterilizando os ambientes e eliminado vírus, fungos e bactérias. Muitos problemas respiratórios em função da ação de fungos e bactérias serão evitados com o ambiente mais higienizado.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="site-section" id="about-section">
+            <div class="container">
+                <div class="row mb-5">
+
+                    <div class="col-md-5 ml-auto mb-5 order-md-2 aos-init align-items-center d-sm-none d-md-flex" data-aos="fade">
+                        <img src="~/images/logo_min.png" alt="Image" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-6 order-md-1 aos-init" data-aos="fade">
+
+                        <div class="row">
+
+                            <div class="col-12">
+                                <div class="text-left pb-1">
+                                    <h2 class="text-black h1 site-section-heading">Quem somos?</h2>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <p class="lead">
+                                    Somos uma empresa que atua no mercado de Controle de Pragas, oferecendo serviços como Dedetização, Desinsetização, Desratização, Descupinização, Sanitização e Higienização de caixa d’água.
+                                </p>
+                                <p class="lead">
+                                    Situada na cidade de Guarulhos, região metropolitana de São Paulo, a Lorgus executa seus serviços com foco em qualidade, segurança e respeito ao meio ambiente. Para isso, nossos colaboradores sempre utilizam equipamentos de proteção (EPI’s) com certificado de aprovação, além de produtos devidamente registados no Ministério da Saúde.
+                                </p>
+                            </div>
+                            <div class="col-md-12 mb-md-12 mb-0 col-lg-12">
+                                <div class="unit-4">
+                                    <div class="unit-4-icon mr-4 mb-3"><span class="text-secondary icon-phonelink"></span></div>
+                                    <div>
+                                        <blockquote class="mb-5">
+                                            <p>"Atendimento excelente, garantia do serviço prestado, explicação de todas as dúvidas sobre o procedimento, atendimento de acordo com nosso horário de trabalho (independente do horario). Melhor custo benefício."</p>
+                                        </blockquote>
+                                        <figure class="mb-4">
+                                            <p>Valentina Galatica Reis</p>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <section class="site-section bg-light" id="contact-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-12 text-center">
+                        <h2 class="text-black h1 site-section-heading">Contate-nos</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7 mb-5">
+
+                        <form action="#" method="post" class="p-5 bg-white" id="form-contact">
+
+                            <h2 class="h4 text-black mb-5">Formulário de contato</h2>
+                            <div class="row form-group">
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <label class="text-black" for="fname">Nome completo</label>
+                                    <input required type="text" id="fname" name="fullName" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-black" for="fphone">Telefone</label>
+                                    <input type="text" id="fphone" name="phone" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+
+                                <div class="col-md-12">
+                                    <label class="text-black" for="email">E-mail</label>
+                                    <input required type="email" id="email" name="email" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label class="text-black" for="message">Mensagem</label>
+                                    <textarea required name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Escreva suas perguntas e observações aqui..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <button id="submit-contact-form" class="btn btn-primary btn-md text-white">
+                                        Enviar mensagem
+                                    </button>
+                                    <br />
+                                    <span id="msgSuccess" class="text-success" style="display:none">E-mail enviado, por favor aguarde o nosso contato.</span>
+                                    <span id="msgError" class="text-danger" style="display:none">Desculpe, ocorreu um erro, não foi possível enviar o e-mail.</span>
+
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                    <div class="col-md-5">
+
+                        <div class="p-4 mb-3 bg-white">
+
+                            <p class="mb-0 font-weight-bold">Telefone</p>
+                            <p class="mb-4"><a href="tel:+5501123828648">(11) 2382-8648</a></p>
+
+                            <p class="mb-0 font-weight-bold">WhatsApp</p>
+                            <p class="mb-4"><a href="https://wa.me/5511972197171?text=Ol%C3%A1%2C+vi+o+site+de+voc%C3%AAs+e+tenho+interesse+em+fazer+um+or%C3%A7amento%21" target="_blank">(11) 97219-7171</a></p>
+
+                            <p class="mb-0 font-weight-bold">E-mail</p>
+                            <p class="mb-4"><a href="mailto:contato@lorgus.com.br" target="_blank">contato@lorgus.com.br</a></p>
+                            
+                            <p class="mb-0 font-weight-bold">Horário de Funcionamento</p>
+                            <p class="mb-4">Todos os dias das 8h às 20h</p>
+
+                            <p class="mb-0 font-weight-bold">Endereço</p>
+                            <p class="mb-4">Av. Carlos Ferreira Endres, 321 - Vila das Bandeiras, Guarulhos - SP, 07043-000</p>
+
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29274.239812125703!2d-46.548265!3d-23.486423!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x47c10fe90c4c945a!2sLorgus%20Controle%20de%20Pragas!5e0!3m2!1spt-BR!2sbr!4v1606674286098!5m2!1spt-BR!2sbr" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h2 class="footer-heading mb-4">Quem somos?</h2>
+                                <p>Somos uma empresa que atua no mercado de Controle de Pragas, oferecendo serviços como Dedetização, Desinsetização, Desratização, Descupinização, Sanitização e Higienização de caixa d’água.</p>
+                            </div>
+                            <div class="col-md-3 ml-auto">
+                                <h2 class="footer-heading mb-4">Navegação</h2>
+                                <ul class="list-unstyled">
+                                    <li><a href="#home-section" class="smoothscroll">Home</a></li>
+                                    <li><a href="#services-section" class="smoothscroll">Serviços</a></li>
+                                    <li><a href="#about-section" class="smoothscroll">Quem somos</a></li>
+                                    <li><a href="#contact-section" class="smoothscroll">Contato</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3">
+                                <h2 class="footer-heading mb-4">Curta nossa página</h2>
+                                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDedetizadoraLorgus%2F&amp;tabs&amp;width=280&amp;height=214&amp;small_header=false&amp;adapt_container_width=false&amp;hide_cover=false&amp;show_facepile=true&amp;appId" width="280" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-5 mt-5 text-center">
+                    <div class="col-md-12">
+                        <div class="border-top pt-5">
+                            <p>
+                                Copyright © Lorgus
+                                <script>document.write(new Date().getFullYear());</script> Todos os direitos reservados</a>
+                            </p>
+                            <p>Lorgus Controle De Pragas Ltda - CNPJ: 22.970.570/0001-47</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+    </div> <!-- .site-wrap -->
+
+    <a href="https://wa.me/5511972197171?text=Ol%C3%A1%2C+vi+o+site+de+voc%C3%AAs+e+tenho+interesse+em+fazer+um+or%C3%A7amento%21" class="btn-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp btn-whatsapp-icon"></i>
+    </a>
+
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="~/js/jquery-ui.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/jquery.stellar.min.js"></script>
+    <script src="~/js/jquery.countdown.min.js"></script>
+    <script src="~/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/js/jquery.easing.1.3.js"></script>
+    <script src="~/js/aos.js"></script>
+    <script src="~/js/jquery.fancybox.min.js"></script>
+    <script src="~/js/jquery.sticky.js"></script>
+
+    <script src="~/js/typed.js"></script>
+    <script>
+        var typed = new Typed('.typed-words', {
+            strings: [" desratização!", " descupinização!", " controle integrado de pragas!", " sanitização!", " higienização de caixa d’água!"],
+            typeSpeed: 80,
+            backSpeed: 80,
+            backDelay: 4000,
+            startDelay: 1000,
+            loop: true,
+            showCursor: true
+        });
+    </script>
+    <style type="text/css" data-typed-js-css="true">
+        .typed-cursor {
+            opacity: 1;
+        }
+
+            .typed-cursor.typed-cursor--blink {
+                animation: typedjsBlink 0.7s infinite;
+                -webkit-animation: typedjsBlink 0.7s infinite;
+                animation: typedjsBlink 0.7s infinite;
+            }
+
+        @@keyframes typedjsBlink {
+            50% {
+                opacity: 0.0;
+            }
+        }
+
+        @@-webkit-keyframes typedjsBlink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <script src="~/js/main.js"></script>
+
+    <script>
+
+        const spinner = `<i class="fas fa-spinner fa-spin"></i>`;
+
+        const defaultMsg = `Enviar mensagem`;
+
+        $("#form-contact").submit(function (e) {
+
+            e.preventDefault();
+
+            e.stopPropagation();
+
+            $("#submit-contact-form").html(spinner);
+
+            $.post("@Url.Action("SendContactEmail", "Home")", $(this).serialize(), function (resp) {
+
+                if (resp.success) {
+
+                    $("#msgError").hide('slow');
+
+                    $("#msgSuccess").show('slow');
+
+                    $("#form-contact")[0].reset();
+                }
+                else {
+                    console.error(resp.ex);
+
+                    $("#msgSuccess").hide('slow');
+                    1
+                    $("#msgError").show('slow');
+
+                }
+            })
+                .done(function () {
+                    setTimeout(function () {
+                        $("#msgError").hide('slow');
+
+                        $("#msgSuccess").hide('slow');
+                    }, 3000);
+
+                    $("#submit-contact-form").html(defaultMsg);
+
+                });
+        });
+
+        const phoneMask = (value) => {
+            value = value.replace(/\D/g, '');
+
+            if (value.length >= 11) {
+                return value
+                    .replace(/(\d{2})(\d{1})(\d{4})(\d{4})/, '($1)$2 $3-$4')
+                    .replace(/(-\d{4})\d+?$/, '$1');
+            }
+
+            return value
+                .replace(/(\d{2})(\d)/, '($1) $2')
+                .replace(/( \d{4})(\d)/, '$1-$2')
+                .replace(/(-\d{4})\d+?$/, '$1');
+        };
+
+        $("#fphone").keydown(function (e) {
+
+            var key = event.keyCode || event.charCode;
+
+            if (this.value.length == 15 && !(key == 8 || key == 46)) {
+                e.stopPropagation();
+                return false;
+            }
+
+            this.value = phoneMask(this.value);
+        });
+
+        $("#fphone").keypress(function () {
+            this.value = phoneMask(this.value);
+        });
+
+        $("#fphone").keyup(function () {
+            this.value = phoneMask(this.value);
+        });
+
+        $("#fphone").change(function () {
+            this.value = phoneMask(this.value);
+        });
+    </script>
+</body>
+</html>
