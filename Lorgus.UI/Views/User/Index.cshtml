@@ -1,0 +1,185 @@
+﻿@model IEnumerable<User>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewData["Title"] = "Admin - usuários";
+
+    ViewData["User"] = "active";
+
+    var count = 0;
+}
+
+
+<section class="md-ui component-data-table" style="margin-top:130px">
+    <header class="main-table-header">
+        <h1 class="table-header--title">Usuários</h1>
+        <span class="table-header--icons">
+            <button class="mdl-button mdl-js-button mdl-button--icon show-modal-new-user">
+                <i class="material-icons">add</i>
+            </button>
+        </span>
+    </header>
+    <div class="main-table-wrapper">
+        <table class="main-table-content" id="index-table">
+            <thead class="data-table-header">
+                <tr class="data-table-row">
+                    <td class="table-datacell datatype-string">Nome</td>
+                    <td class="table-datacell datatype-string">Telefone</td>
+                    <td class="table-datacell datatype-string">E-mail</td>
+                    <td class="table-datacell datatype-string">Nível de acesso</td>
+                    <td class="table-datacell"></td>
+                </tr>
+            </thead>
+            <tbody class="data-table-content">
+                @foreach (var item in Model)
+                {
+                    <tr class="data-table-row">
+                        <td class="table-datacell datatype-string" id="name_@count" data-value="@Html.Raw(item.FullName)">@Html.Raw(item.FullName)</td>
+                        <td class="table-datacell datatype-string" id="phone_@count" data-value="@Html.Raw(item.Phone)">@Html.Raw(item.Phone)</td>
+                        <td class="table-datacell datatype-string" id="email_@count" data-value="@Html.Raw(item.Email)">@Html.Raw(item.Email)</td>
+                        <td class="table-datacell datatype-string" id="access_@count" data-value="@Html.Raw(item.AccessLevel.Description)">@Html.Raw(item.AccessLevel.Description)</td>
+                        <td class="table-datacell datatype-string">@Html.Raw($"<a href=\"#\" onclick=\"editUser({count}, {item.UserId})\">Editar</a>")</td>
+                    </tr>
+
+                    count++;
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+</section>
+
+<dialog class="mdl-dialog" id="new-user-dialog">
+    <div class="mdl-dialog__content">
+        <form asp-controller="User" asp-action="Create" method="post" class="bg-white" id="form-new-user">
+
+            <h2 class="h4 text-black mb-5">Novo usuário</h2>
+            <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                    <label class="text-black" for="fname">Nome completo</label>
+                    <input required type="text" id="fname" name="fullName" class="form-control">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                    <label class="text-black" for="fphone">Telefone</label>
+                    <input type="text" id="fphone" name="phone" class="form-control">
+                </div>
+            </div>
+
+            <div class="row form-group">
+
+                <div class="col-md-12">
+                    <label class="text-black" for="email">E-mail</label>
+                    <input required type="email" id="email" name="email" class="form-control">
+                </div>
+            </div>
+
+            @*<span id="msgSuccess" class="text-success" style="display:none">Usuário criado com sucesso!</span>
+        <span id="msgError" class="text-danger" style="display:none">Erro ao criar usuário</span>*@
+        </form>
+    </div>
+    <div class="mdl-dialog__actions">
+        <button type="button" class="mdl-button save-user">Salvar</button>
+        <button type="button" class="mdl-button close-modal-new-user">Cancelar</button>
+    </div>
+</dialog>
+
+<dialog class="mdl-dialog" id="edit-user-dialog">
+    <div class="mdl-dialog__content">
+        <form asp-controller="User" asp-action="Edit" method="post" class="bg-white" id="form-edit-user">
+            <input type="hidden" id="userId" name="userId" value="" />
+            <h2 class="h4 text-black mb-5">Editar usuário</h2>
+            <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                    <label class="text-black" for="fname">Nome completo</label>
+                    <input required type="text" id="fname" name="fullName" class="form-control">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                    <label class="text-black" for="fphone">Telefone</label>
+                    <input type="text" id="fphone" name="phone" class="form-control">
+                </div>
+            </div>
+
+            <div class="row form-group">
+
+                <div class="col-md-12">
+                    <label class="text-black" for="email">E-mail</label>
+                    <input required type="email" id="email" name="email" class="form-control">
+                </div>
+            </div>
+
+            @*<span id="msgSuccess" class="text-success" style="display:none">Usuário criado com sucesso!</span>
+        <span id="msgError" class="text-danger" style="display:none">Erro ao criar usuário</span>*@
+        </form>
+    </div>
+    <div class="mdl-dialog__actions">
+        <button type="button" class="mdl-button edit-user">Salvar</button>
+        <button type="button" class="mdl-button close-modal-edit-user">Cancelar</button>
+    </div>
+</dialog>
+
+@section Scripts
+{
+
+    <script>
+
+        var dialog = document.getElementById('new-user-dialog');
+
+        var showModalButton = document.querySelector('.show-modal-new-user');
+
+        if (!dialog.showModal) {
+            dialogPolyfill.registerDialog(dialog);
+        }
+
+        showModalButton.addEventListener('click', function () {
+            dialog.showModal();
+        });
+
+        dialog.querySelector('.close-modal-new-user').addEventListener('click', function () {
+            dialog.close();
+        });
+
+        dialog.querySelector('.save-user').addEventListener('click', function () {
+
+            $("#form-new-user").submit();
+        });
+
+
+
+        var editDialog = document.getElementById('edit-user-dialog');
+
+        if (!editDialog.showModal) {
+            dialogPolyfill.registerDialog(dialog);
+        }
+
+        editDialog.querySelector('.close-modal-edit-user').addEventListener('click', function () {
+            editDialog.close();
+        });
+
+        editDialog.querySelector('.edit-user').addEventListener('click', function () {
+
+            $("#form-edit-user").submit();
+        });
+
+
+
+        function editUser(rowIndex, userId) {
+
+            $('#userId').val(userId);
+            $('#form-edit-user input[name="fullName"]').val($(`#name_${rowIndex}`).data('value'));
+            $('#form-edit-user input[name="phone"]').val($(`#phone_${rowIndex}`).data('value'));
+            $('#form-edit-user input[name="email"]').val($(`#email_${rowIndex}`).data('value'));
+
+            editDialog.showModal();
+
+        }
+    </script>
+
+}

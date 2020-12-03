@@ -73,7 +73,7 @@ namespace Lorgus.UI.Controllers
 
                 var to = new MailAddress(_config.ContactEmail);
 
-                emailSender.Send(to, body, "Solicitação de orçamento", replacments, attachments);
+                emailSender.Send(to, body, "Nova solicitação de orçamento", replacments, attachments);
 
                 return Json(new
                 {

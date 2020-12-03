@@ -1,0 +1,115 @@
+﻿@model IEnumerable<Budget>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewData["Title"] = "Admin";
+
+    ViewData["Admin"] = "active";
+}
+
+
+<section class="md-ui component-data-table" style="margin-top:130px">
+    <header class="main-table-header">
+        <h1 class="table-header--title">Solitações de orçamento</h1>
+        @*<span class="table-header--icons">
+                <i class="material-icons">filter_list</i><i class="material-icons">more_vert</i>
+            </span>*@
+    </header>
+    <div class="main-table-wrapper">
+        <table class="main-table-content" id="index-table">
+            <thead class="data-table-header">
+                <tr class="data-table-row">
+                    <td class="table-datacell datatype-string">Nome</td>
+                    <td class="table-datacell datatype-string">Telefone</td>
+                    <td class="table-datacell datatype-string">E-mail</td>
+                    <td class="table-datacell datatype-string">Data</td>
+                    <td class="table-datacell"></td>
+                </tr>
+            </thead>
+            <tbody class="data-table-content">
+                @foreach (var item in Model)
+                {
+                    <tr class="data-table-row">
+                        <td class="table-datacell datatype-string">@Html.Raw(item.FullName)</td>
+                        <td class="table-datacell datatype-string">@Html.Raw(item.Phone)</td>
+                        <td class="table-datacell datatype-string">@Html.Raw(item.Email)</td>
+                        <td class="table-datacell datatype-string">@Html.Raw(item.Date.ToString("dd/MM/yyyy HH:mm:ss"))</td>
+                        <td class="table-datacell datatype-string">@(item.Answered ? Html.Raw("Respondido") : Html.Raw($"<a href=\"#\" onclick=\"sendAnswer({item.BudgetId}, '{item.Message}', '{item.FullName.Split()[0]}')\">Responder</a>"))</td>
+                    </tr>
+                }
+
+                @if (!Model.Any())
+                {
+                    <tr class="data-table-row">
+                        <td class="table-datacell" colspan="5" style="text-align: center;">
+                            Nenhuma solicitação de orçamento para mostrar! :(
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<dialog class="mdl-dialog" id="answer-dialog" style="width: 600px;">
+    <div class="mdl-dialog__content">
+        <form asp-controller="Admin" asp-action="SendAnswer" method="post" class="bg-white" id="form-answer">
+            <input type="hidden" name="BudgetId" id="BudgetId" value="" />
+            <h2 class="h4 text-black mb-5">Responder solicitação</h2>
+            <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                    <strong id="client-name">Mensagem do cliente:</strong>
+                    <p id="client-message">
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-12">
+                    <label class="text-black" for="message">Resposta</label>
+                    <textarea required name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Escreva sua resposta aqui..."></textarea>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div class="mdl-dialog__actions">
+        <button type="button" class="mdl-button send-answer">Enviar</button>
+        <button type="button" class="mdl-button close-dialog">Cancelar</button>
+    </div>
+</dialog>
+
+@section Scripts
+{
+    <script>
+        function sendAnswer(budgetId, message, name) {
+
+            $('#BudgetId').val(budgetId);
+
+            $('#client-message').text(message);
+
+            $('#client-name').text(name);
+
+            dialog.showModal();
+        }
+
+        var dialog = document.getElementById('answer-dialog');
+
+        if (!dialog.showModal) {
+            dialogPolyfill.registerDialog(dialog);
+        }
+
+
+        dialog.querySelector('.close-dialog').addEventListener('click', function () {
+            dialog.close();
+        });
+
+        dialog.querySelector('.send-answer').addEventListener('click', function () {
+
+            $("#form-answer").submit();
+        });
+    </script>
+    
+}

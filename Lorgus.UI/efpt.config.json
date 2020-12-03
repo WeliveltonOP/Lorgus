@@ -14,7 +14,19 @@
    "Tables": [
       {
          "HasPrimaryKey": true,
+         "Name": "access_level"
+      },
+      {
+         "HasPrimaryKey": true,
          "Name": "budget"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "request_change_password"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "user"
       }
    ],
    "UseDatabaseNames": false,

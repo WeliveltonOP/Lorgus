@@ -1,0 +1,306 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewData["Title"]</title>
+
+    @RenderSection("Styles", false)
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto+Mono|Roboto+Slab|Roboto:400,400i,500,500i,700,700i" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+
+
+    <link rel="shortcut icon" href="~/images/logo_min.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/css/style.css">
+
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+
+    <style>
+
+        .md-ui.component-data-table {
+            background: #fff;
+            border: 0;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            font-family: "Roboto", sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            margin: 2em;
+            width: auto;
+            /* START - main table header */
+            /* END - main table header */
+            /* START - main table wrapper */
+            /* END main table wrapper */
+            /* START main table footer */
+            /* END main table footer */
+        }
+
+            .md-ui.component-data-table .main-table-header {
+                padding: 24px 14px 24px 24px;
+            }
+
+                .md-ui.component-data-table .main-table-header .table-header--title {
+                    color: rgba(0, 0, 0, 0.87);
+                    font-weight: 100;
+                    font-size: 20px;
+                    margin: 0;
+                    display: inline-block;
+                }
+
+                .md-ui.component-data-table .main-table-header .table-header--icons {
+                    font-size: 24px;
+                    float: right;
+                    vertical-align: middle;
+                }
+
+                    .md-ui.component-data-table .main-table-header .table-header--icons .material-icons:first-child {
+                        padding-right: 24px;
+                    }
+
+            .md-ui.component-data-table .main-table-wrapper {
+                display: block;
+                max-width: 100%;
+                overflow-x: auto;
+                /* START data table content */
+            }
+
+                .md-ui.component-data-table .main-table-wrapper .main-table-content {
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                    width: 100%;
+                    overflow: hidden;
+                    /* START - data table header */
+                    /* END - data table header */
+                    /* START - data table content */
+                    /* END data table content */
+                }
+
+                    .md-ui.component-data-table .main-table-wrapper .main-table-content tr {
+                        border-bottom: 1px solid #e0e0e0;
+                    }
+
+                        .md-ui.component-data-table .main-table-wrapper .main-table-content tr td {
+                            text-overflow: ellipsis;
+                            padding: 0 56px 0 0;
+                        }
+
+                            .md-ui.component-data-table .main-table-wrapper .main-table-content tr td:first-child {
+                                padding: 0 56px 0 24px;
+                            }
+
+                            .md-ui.component-data-table .main-table-wrapper .main-table-content tr td:last-child {
+                                padding: 0 24px 0 0;
+                            }
+
+                            .md-ui.component-data-table .main-table-wrapper .main-table-content tr td.datatype-string {
+                                text-align: left;
+                            }
+
+                            .md-ui.component-data-table .main-table-wrapper .main-table-content tr td.datatype-numeric {
+                                text-align: right;
+                            }
+
+                    .md-ui.component-data-table .main-table-wrapper .main-table-content .data-table-header tr {
+                        height: 64px;
+                        padding: 0 24px;
+                    }
+
+                        .md-ui.component-data-table .main-table-wrapper .main-table-content .data-table-header tr td {
+                            color: rgba(0, 0, 0, 0.54);
+                            font-size: 12px;
+                            font-weight: 500;
+                            vertical-align: middle;
+                        }
+
+                            .md-ui.component-data-table .main-table-wrapper .main-table-content .data-table-header tr td .material-icons {
+                                font-size: 18px;
+                                vertical-align: middle;
+                                padding-right: 8px;
+                            }
+
+                    .md-ui.component-data-table .main-table-wrapper .main-table-content .data-table-content tr {
+                        height: 48px;
+                        cursor: pointer;
+                    }
+
+                        .md-ui.component-data-table .main-table-wrapper .main-table-content .data-table-content tr:hover {
+                            background: #eee;
+                        }
+
+                        .md-ui.component-data-table .main-table-wrapper .main-table-content .data-table-content tr td {
+                            color: rgba(0, 0, 0, 0.87);
+                            font-weight: 500;
+                        }
+
+                            .md-ui.component-data-table .main-table-wrapper .main-table-content .data-table-content tr td input[type="text"] {
+                                background: transparent;
+                                border: 0;
+                                color: #212121;
+                                font-family: "Roboto", sans-serif;
+                                font-size: 13px;
+                                font-weight: 400;
+                                height: 40px;
+                            }
+
+                                .md-ui.component-data-table .main-table-wrapper .main-table-content .data-table-content tr td input[type="text"]::placeholder {
+                                    color: rgba(0, 0, 0, 0.38);
+                                }
+
+            .md-ui.component-data-table .main-table-footer {
+                color: rgba(0, 0, 0, 0.54);
+                font-size: 12px;
+                text-align: right;
+                padding: 22px 0;
+            }
+
+                .md-ui.component-data-table .main-table-footer span {
+                    vertical-align: middle;
+                }
+
+                    .md-ui.component-data-table .main-table-footer span .material-icons {
+                        font-size: 24px;
+                        vertical-align: middle;
+                        cursor: pointer;
+                    }
+
+                    .md-ui.component-data-table .main-table-footer span.rows-selection {
+                        padding-right: 32px;
+                    }
+
+                        .md-ui.component-data-table .main-table-footer span.rows-selection .rows-selection-label {
+                            padding-right: 38px;
+                        }
+
+                    .md-ui.component-data-table .main-table-footer span.rows-amount {
+                        padding-right: 32px;
+                    }
+
+                    .md-ui.component-data-table .main-table-footer span.table-pagination {
+                        padding-right: 14px;
+                    }
+
+                        .md-ui.component-data-table .main-table-footer span.table-pagination .material-icons:first-child {
+                            padding-right: 24px;
+                        }
+
+        .sticky-wrapper {
+        }
+    </style>
+</head>
+<body>
+
+    <div class="site-wrap">
+
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body">
+
+            </div>
+        </div>
+
+        <div class="border-bottom top-bar py-2 bg-dark" id="home-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="mb-0">
+                            <span class="mr-3"><strong class="text-white">Telefone:</strong> <a href="tel:+5501123828648">(11) 2382-8648</a></span>
+                            <span><strong class="text-white">E-mail:</strong> <a href="mailto:contato@lorgus.com.br" target="_blank">contato@lorgus.com.br</a></span>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="social-media">
+                            <li><a href="https://www.facebook.com/DedetizadoraLorgus/" target="_blank" class="p-2"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="https://wa.me/5511972197171?text=Ol%C3%A1%2C+vi+o+site+de+voc%C3%AAs+e+tenho+interesse+em+fazer+um+or%C3%A7amento%21" target="_blank" class="p-2"><i class="fab fa-whatsapp"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sticky-wrapper" class="sticky-wrapper" style="height: 74.125px;">
+            <header class="site-navbar py-4 bg-white js-sticky-header site-navbar-target border-bottom" role="banner" style="">
+
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <div class="col-11 col-xl-2">
+                            <div class="mb-0 site-logo"><a href="/" class="h2 mb-0"><img src="~/images/logo.png" width="150" alt="Logo" /></a></div>
+                        </div>
+                        <div class="col-12 col-md-10 d-none d-xl-block">
+                            <nav class="site-navigation position-relative text-right" role="navigation">
+
+                                <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                                    <li><a href="@Url.Action("Index", "Home")" class="nav-link ">Home</a></li>
+                                    @if (User.IsInRole("admin"))
+                                    {
+                                        <li>
+                                            <a href="@Url.Action("Index", "User")" class="nav-link @ViewData["User"]">Usuários</a>
+                                        </li>
+                                    }
+                                    <li>
+                                        <a href="@Url.Action("Index", "Admin")" class="nav-link @ViewData["Admin"]">Solicitações</a>
+                                    </li>
+                                    <li><a href="@Url.Action("Logout", "Account")" class="nav-link"><i class="fas fa-sign-out-alt"></i></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+
+
+                        <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><i class="fas fa-bars"></i></a></div>
+
+                    </div>
+                </div>
+
+            </header>
+        </div>
+
+        @RenderBody()
+
+
+        <footer class="site-footer p-0 pb-3" style=" position: fixed; bottom: 0; width: 100%;">
+            <div class="container">
+                <div class="row pt-5 mt-5 text-center">
+                    <div class="col-md-12">
+                        <div class="pt-2">
+                            <p>
+                                Copyright © Lorgus
+                                <script>document.write(new Date().getFullYear());</script> Todos os direitos reservados
+                            </p>
+                            <p>Lorgus Controle De Pragas Ltda - CNPJ: 22.970.570/0001-47</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+    </div> <!-- .site-wrap -->
+
+
+
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="~/js/jquery-ui.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.sticky.js"></script>
+    <script src="~/js/aos.js"></script>
+
+    <script src="~/js/main.js"></script>
+
+
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+
+    @RenderSection("Scripts", false)
+
+</body>
+</html>

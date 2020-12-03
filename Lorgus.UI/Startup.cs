@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 using HILC.UI.Services;
 using Lorgus.UI.Models;
 using Lorgus.UI.Services.Abstractions;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -27,6 +29,18 @@ namespace Lorgus.UI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => false;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = new PathString($"/Account/Login/");
+                });
+
             services.Configure<LorgusConfig>(Configuration.GetSection("App"));
 
             services.AddControllersWithViews();
@@ -34,6 +48,7 @@ namespace Lorgus.UI
             services.AddDbContext<LorgusContext>(options => options.UseMySql(Configuration.GetConnectionString("LorgusDb")));
 
             services.AddTransient<IEmailSender, EmailSender>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,11 +66,15 @@ namespace Lorgus.UI
             }
 
             app.UseHttpsRedirection();
+
+            app.UseAuthentication();
+
             app.UseStaticFiles();
 
             app.UseRouting();
 
             app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {
