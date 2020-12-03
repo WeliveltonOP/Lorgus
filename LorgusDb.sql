@@ -37,4 +37,4 @@ CREATE TABLE `Request_Change_Password`(
 );
 
 INSERT INTO `Access_Level`(AccessLevelId, `Description`) VALUES (1, 'Admin');
-INSERT INTO `Access_Level`(AccessLevelId, `Description`) VALUES (1, 'Padrão');
+INSERT INTO `Access_Level`(AccessLevelId, `Description`) VALUES (2, 'Padrão');
